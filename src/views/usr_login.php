@@ -1,4 +1,4 @@
-<h2 class="bg-warning text-primary">ログイン</h2>
+<h2 class="text-primary">ログイン</h2>
 <form action="?to=usr&do=check" method="post">
 <div class="form-group">
   <label for="text1">ユーザID:</label>
