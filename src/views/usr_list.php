@@ -1,5 +1,5 @@
 <?php
-require_once("models/User.php");
+require_once(MODEL_DIR . "User.php");
 
 echo '<h2 class="bg-warning text-primary">アカウント一覧</h2>';
 echo '<table class="table table-hover">', PHP_EOL;

@@ -1,5 +1,6 @@
 <?php
-define("VIEW_DIR", "views/");
+define("VIEW_DIR", "src/views/");
+define("MODEL_DIR", "src/models/");
 
 include(VIEW_DIR . "pg_header.php");
 

@@ -1,5 +1,5 @@
 <?php
-require_once("models/User.php");
+require_once(MODEL_DIR . "User.php");
 
 list($uid, $upass) = [$_POST['uid'], $_POST['upass']];
 $user = (new User())->login($uid, $upass);
