@@ -3,7 +3,7 @@
 
 abstract class Model
 {
-    protected const CODE = [
+    const CODE = [
         'urole'=>[1=>'学生', 2=>'教員', 9=>'管理者'],
     ];
 
@@ -30,6 +30,5 @@ abstract class Model
         ['uid'=>'s0018', 'uname'=>'阿部 絢', 'upass'=>'1234', 'urole'=>1],
         ['uid'=>'s0019', 'uname'=>'柴田 智貴', 'upass'=>'1234', 'urole'=>1],
         ['uid'=>'s0020', 'uname'=>'望月 陽菜子', 'upass'=>'1234', 'urole'=>1],
-    
     ];
 }
