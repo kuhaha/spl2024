@@ -1,4 +1,14 @@
 # PHPプログラミング勉強会（基礎編）
+
+**関連リンク**
+1. [PaizaCloud](https://paiza.io/ja/projects/new?language=php)
+1. [PHPマニュアル](https://www.php.net/manual/ja/index.php)
+1. [とほほPHP入門](https://www.tohoho-web.com/php/index.html)
+1. [Boostrap 5マニュアル](https://getbootstrap.jp/docs/5.3/getting-started/introduction/)
+1. [Webプログラミング演習HP](http://www-dx.ip.kyusan-u.ac.jp/rs/site/r06wp/)
+1. [GitHub Desktopをダウンロード・インストール](https://docs.github.com/ja/desktop)
+1. [Composer`をダウンロード・インストール](https://getcomposer.org/download/)
+
 ## １．PHPとは
 
 Webサーバの機能を拡張し、動的にWebページを生成するために用いられるプログラミング言語。以下の目的で利用されている。
