@@ -41,8 +41,7 @@ Webサーバの機能を拡張し、動的にWebページを生成するため�
 - 文字列として出力
   - `<?=式?>`：　`<?php echo 式?>`の略式表記。HTMLに変数や計算式の結果を埋め込むに便利
   - `echo`文：`echo 式1,式2,式3,...;`
-  - `print()`
-  - `printf(),vprintf()`関数
+  - `print()`、`vprintf()`関数
 - 定義済定数
   - `PHP_EOL`：改行文字（通常OSに依存する）
   - `DIRECTORY_SEPARATOR`：ディレクトリの区切り文字（通常OSに依存する）
