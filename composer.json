@@ -16,7 +16,7 @@
   },
   "autoload": {
     "psr-4": {
-        "spl2024": "src"
+        "spl2024\\": "src/"
     }
   }
 }
