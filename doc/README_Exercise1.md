@@ -321,10 +321,12 @@ origin: (3.14,1.87,2.43,4.22)
 降順:   (4.22,3.14,2.43,1.87)
 */
 
+// 配列の値の昇順でソートする
 $gpa_sorted = $gpa;
 asort($gpa_sorted);
 print_r($gpa_sorted);
 
+// 配列を値の降順でソートする
 $gpa_sorted = $gpa;
 arsort($gpa_sorted);
 print_r($gpa_sorted);
@@ -345,10 +347,12 @@ Array
 )
 */
 
+// 配列をキーの昇順でソートする
 $gpa_sorted = $gpa;
 ksort($gpa_sorted);
 print_r($gpa_sorted);
 
+// 配列をキーの降順でソートする
 $gpa_sorted = $gpa;
 krsort($gpa_sorted);
 print_r($gpa_sorted);
@@ -385,7 +389,7 @@ $en_fileds = array_keys($fields);
 
 # 関数を変数に代入したり、関数を引数として使う
 
-// 無名関数を引数として渡す:function()
+// 無名関数を引数として渡す:function() - $itemにタグをつける
 $map1 = array_map(function($item){
 	return '<th>' . $item . '</th>';
 }, $ja_fileds);
@@ -399,7 +403,7 @@ $map2 = array_map($fun1, $en_fields);
 print_r($map2);
 echo implode('',$map2), PHP_EOL;
 
-// 無名関数を引数として渡す:fn()
+// 無名関数を引数として渡す:fn() - $itemにタグをつける
 $map3 = array_map(fn($item)=>'<th>'.$item.'</th>', $en_fileds);
 echo implode('', $map3), PHP_EOL;
 /*出力例：
@@ -503,7 +507,7 @@ echo $tag3->setContent('楽しかったです'), PHP_EOL;
 echo $tag3->addAttribute(['name'=>'kanso']), PHP_EOL;
 echo $tag3->addAttribute(['rows'=>3,'cols'=>20]), PHP_EOL;
 /*
-<<textarea>楽しかったです</textarea>
+<textarea>楽しかったです</textarea>
 <textarea name="kanso">楽しかったです</textarea>
 <textarea name="kanso" rows="3" cols="20">楽しかったです</textarea>
 */
