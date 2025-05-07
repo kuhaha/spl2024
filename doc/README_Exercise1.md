@@ -31,8 +31,8 @@ $people = [
 	'birthday'=>'誕生日',
 ];
 $pattern = "<th>%s</th><th>%s</th><th>%s</th><th>%s</th>". PHP_EOL;
-$en_fileds = array_keys($people);
-$ja_fileds = array_values($people);
+$en_fields = array_keys($people);
+$ja_fields = array_values($people);
 vprintf($pattern, $en_fields);
 vprintf($pattern, $ja_fields);
 /*出力例：
@@ -265,13 +265,13 @@ Array
 )
 */
 
-echo '$email = "' . $email, '"', PHP_EOL;
+echo "$email = '{$email}'", PHP_EOL;
 echo '$emailの長さ：', strlen($email), PHP_EOL;
 echo '$emailの最初の8文字：', substr($email,0,8), PHP_EOL;
 echo '$emailの9文字目以降の部分：', substr($email,9), PHP_EOL;
 
 /*出力例：
-$email = "k23gjk18@st.kyusan-u.ac.jp"
+$email = 'k23gjk18@st.kyusan-u.ac.jp'
 $emailの長さ：26
 $emailの最初の8文字：k23gjk18
 $emailの9文字目以降の部分：st.kyusan-u.ac.jp
