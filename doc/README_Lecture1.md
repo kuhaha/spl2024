@@ -1,7 +1,7 @@
 # PHPプログラミング勉強会（基礎編）
 
 **関連リンク**
-1. [Paiza.IO](https://paiza.io/ja/projects/new?language=php)　[Webプログラミング演習](http://www-dx.ip.kyusan-u.ac.jp/rs/site/r06wp/)
+1. [Paiza.IO](https://paiza.io/ja/projects/new?language=php)　[Webプログラミング演習](http://www-dx.ip.kyusan-u.ac.jp/rs/site/r07wp/)
 1. [PHPマニュアル](https://www.php.net/manual/ja/index.php)　[とほほPHP入門](https://www.tohoho-web.com/php/index.html)　 [とほほBoostrap入門](https://www.tohoho-web.com/bootstrap5/index.html)
 1. [GitHub Desktop](https://docs.github.com/ja/desktop)　[Composer](https://getcomposer.org/download/)
 
@@ -35,8 +35,10 @@ Webサーバの機能を拡張し、動的にWebページを生成するため�
 - 文字列はPHPによって動的に生成することができる
 - 変数と文字列の連結
   - `.`連結演算子
-  - `"AB{$変数}CD"`ダブルクォート文字列に埋め込む※変数を波括弧で囲む（トラブル回避のため）
-  - `sprintf(),vsprintf()`文字列をフォマードする関数※ダブルクォート・シングルクォートを問わず使える
+  - `"AB{$変数}CD"`ダブルクォート文字列に埋め込む
+    ※変数を波括弧で囲む（トラブル回避のため）
+  - `sprintf(),vsprintf()`文字列をフォマードする関数
+    ※ダブルクォート・シングルクォートを問わず使える
   - `implode()`配列要素を繋いで文字列にする
 - 文字列として出力
   - `<?=式?>`：　`<?php echo 式?>`の略式表記。HTMLに変数や計算式の結果を埋め込むに便利
