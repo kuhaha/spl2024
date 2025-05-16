@@ -325,12 +325,7 @@ origin: (3.14,1.87,2.43,4.22)
 $gpa_sorted = $gpa;
 asort($gpa_sorted);
 print_r($gpa_sorted);
-
-// 配列を値の降順でソートする
-$gpa_sorted = $gpa;
-arsort($gpa_sorted);
-print_r($gpa_sorted);
-/*出力例：
+/*出力
 Array
 (
     [Tom] => 1.87
@@ -338,6 +333,12 @@ Array
     [Alice] => 3.14
     [Ketty] => 4.22
 )
+*/
+// 配列を値の降順でソートする
+$gpa_sorted = $gpa;
+arsort($gpa_sorted);
+print_r($gpa_sorted);
+/*出力
 Array
 (
     [Ketty] => 4.22
@@ -351,12 +352,7 @@ Array
 $gpa_sorted = $gpa;
 ksort($gpa_sorted);
 print_r($gpa_sorted);
-
-// 配列をキーの降順でソートする
-$gpa_sorted = $gpa;
-krsort($gpa_sorted);
-print_r($gpa_sorted);
-/*出力例：
+/*出力：
 Array
 (
     [Alice] => 3.14
@@ -364,6 +360,12 @@ Array
     [Ketty] => 4.22
     [Tom] => 1.87
 )
+*/
+// 配列をキーの降順でソートする
+$gpa_sorted = $gpa;
+krsort($gpa_sorted);
+print_r($gpa_sorted);
+/*出力例：
 Array
 (
     [Tom] => 1.87
@@ -394,6 +396,9 @@ $map1 = array_map(function($item){
 	return '<th>' . $item . '</th>';
 }, $ja_fileds);
 echo implode('', $map1), PHP_EOL;
+/*出力
+<th>名前</th><th>住所</th><th>電話番号</th><th>誕生日</th>
+*/
 
 $fun1 = function($item){
     return '<th>' . $item. '</th>';
@@ -402,13 +407,15 @@ $fun1 = function($item){
 $map2 = array_map($fun1, $en_fields);
 print_r($map2);
 echo implode('',$map2), PHP_EOL;
+/*出力
+<th>name</th><th>address</th><th>tel</th><th>birthday</th>
+*/
 
 // 無名関数を引数として渡す:fn() - $itemにタグをつける
-$map3 = array_map(fn($item)=>'<th>'.$item.'</th>', $en_fileds);
+$map3 = array_map(fn($item)=>'<th>'.$item.'</th>', $ja_fileds);
 echo implode('', $map3), PHP_EOL;
-/*出力例：
+/*出力
 <th>名前</th><th>住所</th><th>電話番号</th><th>誕生日</th>
-<th>name</th><th>address</th><th>tel</th><th>birthday</th>
 */
 
 $number = [3.14, 1.87,2.43,4.22];
@@ -418,7 +425,7 @@ $sum = function($x, $y){
 echo array_reduce($number, $sum), PHP_EOL;
 
 echo array_reduce($number, fn($x, $y)=>$x+$y), PHP_EOL;
-/*出力例：
+/*出力
 11.66
 11.66
 */
@@ -426,7 +433,7 @@ echo array_reduce($number, fn($x, $y)=>$x+$y), PHP_EOL;
 echo '10!=';
 echo array_reduce(range(1,10),fn($a, $b)=>$a*$b, 1);
 echo PHP_EOL;
-/*出力例：
+/*出力
 10!=3628800
 */
 ```
@@ -480,25 +487,34 @@ class Tag
 
 $tag = new Tag('input');
 echo $tag, PHP_EOL;
+/*出力
+<input></input>
+*/
+
 $tag->setVoid(true)->addAttribute(['type'=>'text','name'=>'uid']);
 echo $tag, PHP_EOL;
+/*出力
+<input type="text" name="uid">
+*/
+
 $tag->addAttribute(['class'=>'form-control']);
 echo $tag, PHP_EOL;
-/*
-<input></input>
-<input type="text" name="uid">
+/*出力
 <input type="text" name="uid" class="form-control">
 */
+
 $tag1 = $tag;
 $tag1->addAttribute(['type'=>'hidden','name'=>'pid']);
 echo $tag1, PHP_EOL;
+/*出力
+<input type="hidden" name="pid" class="form-control">
+*/
 
 $tag2 = $tag;
 $tag2->addAttribute(['type'=>'submit','name'=>'s', 'value'=>'登録']);
 $tag2->addAttribute(['class'=>'btn btn-primary']);
 echo $tag2, PHP_EOL;
-/*
-<input type="hidden" name="pid" class="form-control">
+/*出力
 <input type="submit" name="s" class="btn btn-primary" value="登録">
 */
 
@@ -506,7 +522,7 @@ $tag3 = new Tag('textarea');
 echo $tag3->setContent('楽しかったです'), PHP_EOL;
 echo $tag3->addAttribute(['name'=>'kanso']), PHP_EOL;
 echo $tag3->addAttribute(['rows'=>3,'cols'=>20]), PHP_EOL;
-/*
+/*出力
 <textarea>楽しかったです</textarea>
 <textarea name="kanso">楽しかったです</textarea>
 <textarea name="kanso" rows="3" cols="20">楽しかったです</textarea>
