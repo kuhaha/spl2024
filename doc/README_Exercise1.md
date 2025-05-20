@@ -8,17 +8,24 @@ $title = '自動運転に向けての危険検知支援システムの開発';
 // 題目:「自動運転に向けての危険検知支援システムの開発」
 
 echo '題目:「', $title, '」', PHP_EOL; // echo文：複数文字列を出力
-
 echo '題目:「'. $title. '」'. PHP_EOL; // echo文：繋いだ文字列を出力
-
 echo "題目:「{$title}」".PHP_EOL; // echo文：変数の埋め込み（ダブルクォート文字列）
+/*出力：
+ 題目:「自動運転に向けての危険検知支援システムの開発」
+ 題目:「自動運転に向けての危険検知支援システムの開発」
+ 題目:「自動運転に向けての危険検知支援システムの開発」
+*/
 
 # sprintf(), printf(): フォマードされた文字列の生成と出力
-printf('題目:「%s」', $title . PHP_EOL);
-printf("題目:「%s」", $title . PHP_EOL);
+printf('題目:「%s」'. PHP_EOL, $title);
+printf("題目:「%s」". PHP_EOL, $title);
+/*出力：
+ 題目:「自動運転に向けての危険検知支援システムの開発」
+ 題目:「自動運転に向けての危険検知支援システムの開発」
+*/
 
-printf('題目:"%s"', $title . PHP_EOL);
-printf("題目:'%s'", $title . PHP_EOL);
+printf('題目:"%s"'. PHP_EOL, $title);
+printf("題目:'%s'". PHP_EOL, $title);
 /*出力例：
  題目:"自動運転に向けての危険検知支援システムの開発"
  題目:'自動運転に向けての危険検知支援システムの開発'
@@ -36,7 +43,7 @@ $en_fields = array_keys($people);
 $ja_fields = array_values($people);
 vprintf($pattern, $en_fields);
 vprintf($pattern, $ja_fields);
-/*出力例：
+/*出力：
  <th>name</th><th>address</th><th>tel</th><th>birthday</th>
  <th>名前</th><th>住所</th><th>電話番号</th><th>誕生日</th>
 */
@@ -44,7 +51,7 @@ vprintf($pattern, $ja_fields);
 # implode(): 要素を繋いで配列を文字列にする
 echo implode(', ', $en_fields), PHP_EOL;
 echo implode(', ', $ja_fields), PHP_EOL;
-/*出力例：
+/*出力：
  name, address, tel, birthday 
  名前, 住所, 電話番号, 誕生日
 */
@@ -52,7 +59,7 @@ echo implode(', ', $ja_fields), PHP_EOL;
 # implode(): 要素を繋いで配列を文字列にする
 echo '<th>',implode('</th><th>', $en_fields),'</th>', PHP_EOL;
 echo '<th>',implode('</th><th>', $ja_fields),'</th>',PHP_EOL;
-/*出力例：
+/*出力：
  <th>name</th><th>address</th><th>tel</th><th>birthday</th>
  <th>名前</th><th>住所</th><th>電話番号</th><th>誕生日</th>
 */
@@ -70,7 +77,7 @@ echo '$arr1 = ';
 print_r($arr1);
 echo '$arr2 = ';
 print_r($arr2);
-/*出力例：
+/*出力：
 $arr1 = Array
 (
     [0] => 理工学部
@@ -92,7 +99,7 @@ echo '$arr3 = ';
 print_r($arr3);
 echo '$arr4 = ';
 print_r($arr4);
-/*出力例：
+/*出力：
 $arr3 = Array
 (
     [0] => 理工学部
@@ -114,7 +121,7 @@ echo '$arr5 = ';
 print_r($arr5);
 echo '$arr6 = ';
 print_r($arr6);
-/*出力例：
+/*出力：
 $arr5 = Array
 (
     [0] => 理工学部
@@ -133,7 +140,7 @@ $arr6 = Array
 echo '代入による要素追加', PHP_EOL;
 $arr4[] = 'データサイエンス学部';
 print_r($arr4);
-/*出力例：
+/*出力：
 代入による要素追加
 Array
 (
@@ -147,7 +154,7 @@ Array
 array_push($arr4, '人工知能学部','人間学部');
 echo 'array_push()：末尾から追加', PHP_EOL;
 print_r($arr4);
-/*出力例：
+/*出力：
 array_push()：末尾から追加
 Array
 (
@@ -163,7 +170,7 @@ Array
 array_unshift($arr4, 'X学部');
 echo 'array_unshift()：先頭から追加', PHP_EOL;
 print_r($arr4);
-/*出力例：
+/*出力：
 array_unshift()：先頭から追加
 Array
 (
@@ -182,7 +189,7 @@ Array
 unset($arr4[0]);
 echo 'unset(): 特定の要素を削除', PHP_EOL;
 print_r($arr4);
-/*出力例：
+/*出力：
 unset(): 特定の要素を削除
 Array
 (
@@ -198,7 +205,7 @@ Array
 array_pop($arr4);
 echo 'array_pop(): 末尾から削除', PHP_EOL;
 print_r($arr4);
-/*出力例：
+/*出力：
 array_pop(): 末尾から削除
 Array
 (
@@ -213,7 +220,7 @@ Array
 array_shift($arr4);
 echo 'array_shift(): 先頭から削除', PHP_EOL;
 print_r($arr4);
-/*出力例：
+/*出力：
 array_shift(): 先頭から削除
 Array
 (
@@ -249,7 +256,7 @@ Array
 
 $array2 = explode('@', $email);
 print_r($array2);
-/*出力例：
+/*出力：
 Array
 (
     [0] => k23gjk18
@@ -259,7 +266,7 @@ Array
 
 $array3 = explode('.', $array2[1]);
 print_r($array3);
-/*出力例：
+/*出力：
 Array
 (
     [0] => st
@@ -274,7 +281,7 @@ echo '$emailの長さ：', strlen($email), PHP_EOL;
 echo '$emailの最初の8文字：', substr($email,0,8), PHP_EOL;
 echo '$emailの9文字目以降の部分：', substr($email,9), PHP_EOL;
 
-/*出力例：
+/*出力：
 $email = 'k23gjk18@st.kyusan-u.ac.jp'
 $emailの長さ：26
 $emailの最初の8文字：k23gjk18
